@@ -3,19 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Jurnal Ramadhan - SMAN 1 Glagah</title>
+    <title>Jurdigra - Jurnal Digital Ramadhan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         
+                :root {
+            /* GANTI URL DI BAWAH INI UNTUK MENGGANTI FOTO HEADER */
+            --header-bg: url('https://i.ibb.co.com/TxHZ0pxc/IMG-20250516-141403-141.jpg');
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f0fdf4;
         }
 
-        .hero-gradient {
-            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        .hero-banner {
+            background-image: linear-gradient(rgba(27, 30, 29, 0.902), rgba(27, 30, 29, 0.9)), var(--header-bg);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .logo-placeholder {
+            width: clamp(50px, 12vw, 100px); /* Autoscale berdasarkan ukuran layar */
+            height: auto;
+            transition: all 0.3s ease;
         }
 
         .btn-class {
@@ -39,7 +53,6 @@
             transform: scale(1.05);
         }
 
-        /* Gaya untuk Tombol Pengaduan Merah */
         .btn-report {
             background-color: #ef4444;
             color: white;
@@ -56,24 +69,75 @@
 <body class="text-slate-800">
 
     <!-- Header / Hero Section -->
-    <header class="hero-gradient text-white py-12 px-6 text-center shadow-lg mb-8">
-        <h1 class="text-4xl md:text-5xl font-bold mb-2">Jurnal Ramadhan <br> SMA Negeri 1 Glagah</h1>
-        <p class="text-emerald-100 text-lg">Membangun Karakter Qur'ani dan Disiplin Ibadah</p>
+    <header class="hero-banner text-white py-14 px-6 text-center shadow-lg mb-8">
+        <!-- Logo Container (Pojok Kiri Atas - Tanpa Background) -->
+        <div class="absolute top-4 left-4 md:top-6 md:left-8">
+            <div class="logo-placeholder bg-transparent flex items-center justify-center">
+                <!-- Gunakan file PNG transparan Anda di sini -->
+                <img src="Photos/logo new.png" alt="Logo SMAN 1 Glagah" class="w-full h-auto drop-shadow-md">
+            </div>
+        </div>
+
+        <!-- Judul Utama -->
+        <h1 class="text-6xl md:text-7xl font-extrabold tracking-tight italic drop-shadow-lg">Jurdigra</h1>
         
-        <!-- Info Waktu -->
-        <div class="mt-8 flex flex-wrap justify-center gap-4">
-            <div class="bg-white/20 px-6 py-3 rounded-2xl backdrop-blur-md border border-white/30">
-                <p class="text-xs uppercase tracking-widest opacity-80">Masehi</p>
+        <!-- Spasi dan Subjudul -->
+        <p class="mt-4 text-emerald-50 text-lg md:text-xl font-bold tracking-wide drop-shadow-md">
+            Jurnal Digital Ramadhan SMA Negeri 1 Glagah
+        </p>
+        
+        <!-- Tanggal & Jam Section -->
+        <div class="mt-10 flex flex-wrap justify-center gap-4">
+            <div class="bg-white/20 px-6 py-3 rounded-2xl backdrop-blur-md border border-white/30 shadow-sm">
+                <p class="text-xs uppercase tracking-widest opacity-80 font-bold text-emerald-100">Hari & Tanggal</p>
                 <p id="date-masehi" class="text-xl font-semibold">-</p>
             </div>
-            <div class="bg-white/20 px-6 py-3 rounded-2xl backdrop-blur-md border border-white/30">
-                <p class="text-xs uppercase tracking-widest opacity-80">Hijriyah</p>
-                <p id="date-hijri" class="text-xl font-semibold">-</p>
+            <div class="bg-white/20 px-6 py-3 rounded-2xl backdrop-blur-md border border-white/30 shadow-sm min-w-[140px]">
+                <p class="text-xs uppercase tracking-widest opacity-80 font-bold text-emerald-100">Waktu Sekarang</p>
+                <p id="current-time" class="text-2xl font-bold tracking-widest">-</p>
             </div>
         </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-4 pb-20">
+
+        <!-- SECTION: Profil Kepala Sekolah -->
+        <section class="mb-12 flex justify-center">
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-emerald-100 flex flex-col items-center text-center max-w-sm w-full">
+                <div class="w-32 h-32 md:w-40 md:h-40 bg-emerald-100 rounded-2xl overflow-hidden mb-4 border-4 border-emerald-50 shadow-inner">
+                    <!-- Image of Principal -->
+                    <img src="Photos/KS.jpg" alt="Abdullah, S.Pd., M.T." class="w-full h-full object-cover">
+                </div>
+                <div class="bg-emerald-700 text-white px-6 py-2 rounded-xl shadow-md mb-2">
+                    <h2 class="text-lg font-bold leading-tight">Abdullah, S.Pd., M.T.</h2>
+                </div>
+                <p class="text-emerald-600 font-semibold text-sm italic">
+                    Kepala Sekolah SMAN 1 Glagah
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION: Maskot & Pesan Motivasi (Elemen Baru) -->
+        <section class="mb-12 flex justify-center">
+            <div class="max-w-3xl w-full bg-white rounded-3xl shadow-sm border border-emerald-100 overflow-hidden">
+                <div class="flex flex-col md:flex-row items-center p-6 gap-6">
+                    <!-- Kiri: Kotak Maskot -->
+                    <div class="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 bg-emerald-50 rounded-2xl border-2 border-dashed border-emerald-200 flex items-center justify-center p-2 group transition-all">
+                        <img src="Photos/maskot.png" alt="Maskot SMAN 1 Glagah" class="w-full h-full object-contain drop-shadow-sm group-hover:scale-110 transition-transform">
+                    </div>
+                    
+                    <!-- Kanan: Kotak Pesan -->
+                    <div class="flex-1 relative quote-box">
+                        <h3 class="text-emerald-800 font-bold text-lg mb-2 flex items-center">
+                            <i class="fas fa-heart mr-2 text-red-500 animate-pulse"></i> Hei Kamu, Semangat Ramadhan nya!
+                        </h3>
+                        <p class="text-slate-600 leading-relaxed italic text-sm md:text-base">
+                            "Selamat menjalankan ibadah di bulan suci Ramadhan 1447 H. Mari kita tingkatkan ketakwaan, perbanyak amal shalih, dan jadikan setiap detik di bulan ini sebagai ladang pahala. Tetap semangat belajar dan beribadah, Ganesha - Ganesha Muda!" <br>~ Ganesh & Shasa
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
         
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
