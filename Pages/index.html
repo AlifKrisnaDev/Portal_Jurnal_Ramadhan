@@ -3,381 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jurdigra - Jurnal Digital Ramadhan</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Maintenance - Jurdigra SMAN 1 Glagah</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        
-                :root {
-            /* GANTI URL DI BAWAH INI UNTUK MENGGANTI FOTO HEADER */
-            --header-bg: url('https://i.ibb.co.com/TxHZ0pxc/IMG-20250516-141403-141.jpg');
-        }
-
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f0fdf4;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff; /* Warna latar gelap agar estetik */
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100-vh;
+            text-align: center;
         }
 
-        .hero-banner {
-            background-image: linear-gradient(rgba(27, 30, 29, 0.902), rgba(27, 30, 29, 0.9)), var(--header-bg);
-            background-size: cover;
-            background-position: center;
-            position: relative;
+        .container {
+            max-width: 700px;
+            padding: 40px 20px;
         }
 
-        .logo-placeholder {
-            width: clamp(50px, 12vw, 100px); /* Autoscale berdasarkan ukuran layar */
+        video {
+            width: 100%;
+            max-width: 400px; /* Ukuran video animasi */
             height: auto;
-            transition: all 0.3s ease;
+            margin-bottom: 20px;
         }
 
-        .btn-class {
-            transition: all 0.3s ease;
+        h2 {
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #4da3ff; /* Warna aksen untuk judul */
         }
 
-        .btn-class:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        .content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #000000;
         }
 
-        .btn-wa {
-            background-color: #25D366;
-            color: white;
-            transition: all 0.3s ease;
-            font-size: 0.85rem;
+        .highlight {
+            color: #4da3ff; /* Warna aksen untuk nama instansi */
+            font-weight: bold;
         }
 
-        .btn-wa:hover {
-            background-color: #128C7E;
-            transform: scale(1.05);
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            opacity: 0.6;
         }
 
-        .btn-report {
-            background-color: #ef4444;
-            color: white;
-            transition: all 0.3s ease;
+        /* Animasi halus saat halaman dimuat */
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
         }
 
-        .btn-report:hover {
-            background-color: #dc2626;
-            transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
-<body class="text-slate-800">
+<body>
 
-    <!-- Header / Hero Section -->
-    <header class="hero-banner text-white py-14 px-6 text-center shadow-lg mb-8">
-        <!-- Logo Container (Pojok Kiri Atas - Tanpa Background) -->
-        <div class="absolute top-4 left-4 md:top-6 md:left-8">
-            <div class="logo-placeholder bg-transparent flex items-center justify-center">
-                <!-- Gunakan file PNG transparan Anda di sini -->
-                <img src="Photos/logo new.png" alt="Logo SMAN 1 Glagah" class="w-full h-auto drop-shadow-md">
-            </div>
+    <div class="container fade-in">
+        <video autoplay loop muted playsinline>
+            <source src="Videos/Under Construction Page.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <h2>Assalamu'alaikum Wr. Wb.</h2>
+
+        <div class="content">
+            <p>
+                Dikarenakan terdapat masalah teknis, untuk saat ini website 
+                <span class="highlight">Jurdigra</span> tidak dapat diakses oleh seluruh siswa/i 
+                <span class="highlight">SMA Negeri 1 Glagah Banyuwangi</span>.
+            </p>
+            <p>
+                Kami, <strong>Remas Al-Hurriyah</strong> beserta <strong>Developer</strong> akan berusaha semaksimal mungkin 
+                agar website Jurdigra dapat secepatnya diakses kembali.
+            </p>
+            <p>Mohon maaf atas ketidaknyamanannya.</p>
         </div>
 
-        <!-- Judul Utama -->
-        <h1 class="text-6xl md:text-7xl font-extrabold tracking-tight italic drop-shadow-lg">Jurdigra</h1>
-        
-        <!-- Spasi dan Subjudul -->
-        <p class="mt-4 text-emerald-50 text-lg md:text-xl font-bold tracking-wide drop-shadow-md">
-            Jurnal Digital Ramadhan SMA Negeri 1 Glagah
-        </p>
-        
-        <!-- Tanggal & Jam Section -->
-        <div class="mt-10 flex flex-wrap justify-center gap-4">
-            <div class="bg-white/20 px-6 py-3 rounded-2xl backdrop-blur-md border border-white/30 shadow-sm">
-                <p class="text-xs uppercase tracking-widest opacity-80 font-bold text-emerald-100">Hari & Tanggal</p>
-                <p id="date-masehi" class="text-xl font-semibold">-</p>
-            </div>
-            <div class="bg-white/20 px-6 py-3 rounded-2xl backdrop-blur-md border border-white/30 shadow-sm min-w-[140px]">
-                <p class="text-xs uppercase tracking-widest opacity-80 font-bold text-emerald-100">Waktu Sekarang</p>
-                <p id="current-time" class="text-2xl font-bold tracking-widest">-</p>
-            </div>
+        <h2>Wassalamu'alaikum Wr. Wb.</h2>
+
+        <div class="footer">
+            &copy; 2026 Remas Al-Hurriyah - SMAN 1 Glagah Banyuwangi
         </div>
-    </header>
+    </div>
 
-    <main class="max-w-7xl mx-auto px-4 pb-20">
-
-        <!-- SECTION: Profil Kepala Sekolah -->
-        <section class="mb-12 flex justify-center">
-            <div class="bg-white p-6 rounded-3xl shadow-sm border border-emerald-100 flex flex-col items-center text-center max-w-sm w-full">
-                <div class="w-32 h-32 md:w-40 md:h-40 bg-emerald-100 rounded-2xl overflow-hidden mb-4 border-4 border-emerald-50 shadow-inner">
-                    <!-- Image of Principal -->
-                    <img src="Photos/KS.jpg" alt="Abdullah, S.Pd., M.T." class="w-full h-full object-cover">
-                </div>
-                <div class="bg-emerald-700 text-white px-6 py-2 rounded-xl shadow-md mb-2">
-                    <h2 class="text-lg font-bold leading-tight">Abdullah, S.Pd., M.T.</h2>
-                </div>
-                <p class="text-emerald-600 font-semibold text-sm italic">
-                    Kepala Sekolah SMAN 1 Glagah
-                </p>
-            </div>
-        </section>
-
-        <!-- SECTION: Maskot & Pesan Motivasi (Elemen Baru) -->
-        <section class="mb-12 flex justify-center">
-            <div class="max-w-3xl w-full bg-white rounded-3xl shadow-sm border border-emerald-100 overflow-hidden">
-                <div class="flex flex-col md:flex-row items-center p-6 gap-6">
-                    <!-- Kiri: Kotak Maskot -->
-                    <div class="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 bg-emerald-50 rounded-2xl border-2 border-dashed border-emerald-200 flex items-center justify-center p-2 group transition-all">
-                        <img src="Photos/maskot.png" alt="Maskot SMAN 1 Glagah" class="w-full h-full object-contain drop-shadow-sm group-hover:scale-110 transition-transform">
-                    </div>
-                    
-                    <!-- Kanan: Kotak Pesan -->
-                    <div class="flex-1 relative quote-box">
-                        <h3 class="text-emerald-800 font-bold text-lg mb-2 flex items-center">
-                            <i class="fas fa-heart mr-2 text-red-500 animate-pulse"></i> Hei Kamu, Semangat Ramadhan nya!
-                        </h3>
-                        <p class="text-slate-600 leading-relaxed italic text-sm md:text-base">
-                            "Selamat menjalankan ibadah di bulan suci Ramadhan 1447 H. Mari kita tingkatkan ketakwaan, perbanyak amal shalih, dan jadikan setiap detik di bulan ini sebagai ladang pahala. Tetap semangat belajar dan beribadah, Ganesha - Ganesha Muda!" <br>~ Ganesh & Shasa
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            
-            <!-- KOLOM KIRI -->
-            <div class="lg:col-span-2 space-y-8">
-                
-                <!-- Section Tombol Jurnal -->
-                <section class="bg-white p-6 rounded-3xl shadow-sm border border-emerald-100">
-                    <h2 class="text-2xl font-bold text-emerald-700 mb-6 flex items-center">
-                        <i class="fas fa-edit mr-3"></i> Link Jurnal Ramadhan
-                    </h2>
-                    
-                    <div class="space-y-8">
-                        <div>
-                            <h3 class="font-bold text-emerald-600 mb-3 ml-1 uppercase text-sm tracking-wider">Kelas X (Sepuluh)</h3>
-                            <div id="container-x" class="grid grid-cols-2 sm:grid-cols-5 gap-3"></div>
-                        </div>
-
-                        <div>
-                            <h3 class="font-bold text-emerald-600 mb-3 ml-1 uppercase text-sm tracking-wider">Kelas XI (Sebelas)</h3>
-                            <div id="container-xi" class="grid grid-cols-2 sm:grid-cols-5 gap-3"></div>
-                        </div>
-
-                        <div>
-                            <h3 class="font-bold text-emerald-600 mb-3 ml-1 uppercase text-sm tracking-wider">Kelas XII (Dua Belas)</h3>
-                            <div id="container-xii" class="grid grid-cols-2 sm:grid-cols-5 gap-3"></div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- SECTION: Tutorial Video (Local Folder) -->
-                <section class="bg-emerald-50 p-6 rounded-3xl shadow-sm border border-emerald-200">
-                    <h2 class="text-2xl font-bold text-emerald-800 mb-4 flex items-center">
-                        <i class="fas fa-play-circle mr-3 text-emerald-600"></i> Tutorial Pengisian Jurnal
-                    </h2>
-                    <p class="text-sm text-emerald-700 mb-6 font-medium">Tonton video tutorial di bawah ini sebelum mulai mengisi jurnal agar tidak terjadi kesalahan data.</p>
-                    
-                    <div class="bg-white p-2 rounded-3xl shadow-inner border border-emerald-100">
-                        <div class="aspect-video w-full rounded-2xl overflow-hidden bg-slate-900 flex items-center justify-center">
-                            <!-- Video Player Lokal -->
-                            <video controls class="w-full h-full rounded-2xl" poster="https://placehold.co/1280x720/059669/white?text=Tutorial+Jurnal+Ramadhan">
-                                <source src="Videos/tutorial-new.mp4" type="video/mp4">
-                                Browser Anda tidak mendukung pemutaran video. 
-                                <a href="Videos/tutorial.mp4" class="text-blue-500 underline">Klik di sini untuk mengunduh video</a>.
-                            </video>
-                        </div>
-                    </div>
-                    <div class="mt-4 flex items-center justify-center">
-                        <a href="Videos/tutorial-new.mp4" download class="text-emerald-700 font-semibold flex items-center gap-2 hover:underline">
-                            <i class="fas fa-download"></i> Unduh Video Tutorial
-                        </a>
-                    </div>
-                </section>
-
-                <!-- SECTION: Layanan Bantuan (WhatsApp) -->
-                <section class="bg-white p-6 rounded-3xl shadow-sm border border-emerald-100">
-                    <div class="flex items-center justify-between mb-2">
-                        <h2 class="text-2xl font-bold text-emerald-700 flex items-center">
-                            <i class="fab fa-whatsapp mr-3 text-green-500 text-3xl"></i> Layanan Bantuan (Admin)
-                        </h2>
-                    </div>
-                    <p class="text-sm text-slate-500 mb-6">Jika mengalami kendala teknis, silakan hubungi admin sesuai kelas masing-masing.</p>
-                    
-                    <div class="space-y-8">
-                        <div>
-                            <h4 class="text-xs font-bold text-slate-400 mb-3 uppercase tracking-widest">Admin Kelas X</h4>
-                            <div id="cs-container-x" class="grid grid-cols-2 sm:grid-cols-5 gap-3"></div>
-                        </div>
-                        <div>
-                            <h4 class="text-xs font-bold text-slate-400 mb-3 uppercase tracking-widest">Admin Kelas XI</h4>
-                            <div id="cs-container-xi" class="grid grid-cols-2 sm:grid-cols-5 gap-3"></div>
-                        </div>
-                        <div>
-                            <h4 class="text-xs font-bold text-slate-400 mb-3 uppercase tracking-widest">Admin Kelas XII</h4>
-                            <div id="cs-container-xii" class="grid grid-cols-2 sm:grid-cols-5 gap-3"></div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- SECTION: Layanan Pengaduan -->
-                <section class="bg-white p-6 rounded-3xl shadow-sm border border-red-100 border-l-8 border-l-red-500">
-                    <div class="flex items-center justify-between mb-2">
-                        <h2 class="text-2xl font-bold text-red-700 flex items-center">
-                            <i class="fas fa-shield-alt mr-3 text-red-500"></i> Layanan Pengaduan
-                        </h2>
-                    </div>
-                    <p class="text-sm text-slate-500 mb-6">Laporkan segera jika ditemukan indikasi kebocoran data (foto, hasil rekapitulasi, dsb).</p>
-                    
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <a href="https://wa.me/6282141835892" target="_blank" class="btn-report font-semibold py-4 px-6 rounded-2xl text-center flex items-center justify-center gap-3">
-                            <i class="fab fa-whatsapp text-xl"></i> Admin Pengaduan 1
-                        </a>
-                        <a href="https://wa.me/6287863994655" target="_blank" class="btn-report font-semibold py-4 px-6 rounded-2xl text-center flex items-center justify-center gap-3">
-                            <i class="fab fa-whatsapp text-xl"></i> Admin Pengaduan 2
-                        </a>
-                    </div>
-                </section>
-
-                <!-- Section Video Ceramah -->
-                <section class="bg-white p-6 rounded-3xl shadow-sm border border-emerald-100">
-                    <h2 class="text-2xl font-bold text-emerald-700 mb-6 flex items-center">
-                        <i class="fab fa-youtube mr-3 text-red-600"></i> Playlist Kajian Ramadhan
-                    </h2>
-                    <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-md bg-black">
-                        <iframe 
-                            width="100%" 
-                            height="100%" 
-                            src="https://www.youtube.com/embed/videoseries?list=PLfXTw5mjp1GTneJQnUQB5ssZnFvwY9aOt" 
-                            title="YouTube video player" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                    <p class="text-[10px] text-slate-400 mt-2 italic">*Jika video tidak muncul, pastikan koneksi stabil atau coba buka melalui tab baru.</p>
-                </section>
-
-            </div>
-
-            <!-- KOLOM KANAN -->
-            <div class="space-y-8">
-                <!-- Widget Jadwal Sholat -->
-                <section class="bg-emerald-800 text-white p-6 rounded-3xl shadow-lg">
-                    <h3 class="text-xl font-bold mb-4 flex items-center">
-                        <i class="fas fa-clock mr-2"></i> Jadwal Sholat
-                    </h3>
-                    <div id="sholat-container" class="space-y-3">
-                        <p class="text-sm opacity-70 italic">Memuat jadwal...</p>
-                    </div>
-                    <p class="text-[10px] mt-4 opacity-50">*Berdasarkan lokasi Banyuwangi (Otomatis)</p>
-                </section>
-
-                <!-- Spotify Playlist -->
-                <section class="bg-white p-4 rounded-3xl shadow-sm border border-emerald-100">
-                    <h3 class="text-lg font-bold text-emerald-700 mb-4 flex items-center">
-                        <i class="fab fa-spotify mr-2 text-[#1DB954]"></i> Playlist Ramadhan
-                    </h3>
-                    <div class="rounded-2xl overflow-hidden">
-                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0idKJqlh5kT8OPPmFJYilT?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                    </div>
-                </section>
-
-                <!-- Quote Harian -->
-                <section class="bg-white p-6 rounded-3xl shadow-sm border-l-4 border-emerald-500">
-                    <h3 class="text-emerald-700 font-bold mb-2 uppercase text-xs tracking-widest">Kutipan Hari Ini</h3>
-                    <p class="text-slate-600 italic">“Wahai orang beriman, telah diwajibkan kepada kalian berpuasa sebagaimana telah diwajibkan kepada orang-orang sebelum kalian agar kalian bertakwa.”</p>
-                    <p class="mt-2 text-sm font-semibold text-emerald-600">— [Al-Baqarah/2:183]</p>
-                </section>
-            </div>
-
-        </div>
-
-    </main>
-
-<footer class="bg-emerald-900 text-emerald-100 py-8 text-center">
-    <p>&copy; 2026 Panitia Ramadhan SMAN 1 Glagah || alifkrisnadev.github || All Rights Reserved.</p>
-    <p class="text-xs mt-2 opacity-50 mb-4">
-        "Dan sesungguhnya Allah benar-benar beserta orang-orang yang berbuat baik”
-    </p>
-
-    <!-- Tombol Privacy Policy -->
-    <a href="Pages/privacy.html"
-       class="inline-block bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-6 py-2 rounded-xl transition-all duration-300 hover:scale-105 shadow-md">
-        Privacy Policy
-    </a>
-</footer>
-
-
-    <script>
-        const linksJurnal = {
-            kelasX: ["https://forms.gle/NgJRj9J38wMVyDRX6", "https://forms.gle/EQbqFwxkDuA4uZJL7", "https://forms.gle/atqu5wCTKLszg4j36", "https://forms.gle/GK4vL17W5WNhTBw26", "https://forms.gle/2dhP46mNSsEa7T5JA", "https://forms.gle/R9Hue8GfVicSzCXX6", "https://forms.gle/joHxPEWnXJsEaz9W7", "https://forms.gle/Ma7QxazZzfnWh8oz7", "https://forms.gle/LP69nTLnVboM4tSH8", "https://forms.gle/DVRW13ifxiAH3RtZ8"],
-            kelasXI: ["https://forms.gle/iMzWqHZKzeFoXhxeA", "https://forms.gle/skruKGH1hrJBQkzz6", "https://forms.gle/HD2FDWzVVptq8BmeA", "https://forms.gle/3hdn3PWLokyYLKG47", "https://forms.gle/e23ZMtAd5ow4xw5s9", "https://forms.gle/g3iJos8Jc6o4pLJM6", "https://forms.gle/QQbdArqpsosTxTox9", "https://forms.gle/NwsbS1fd85mR8zix8", "https://forms.gle/DgdA7vEVi5srijPS7", "https://forms.gle/qEkePRmQm721oymD9"],
-            kelasXII: ["https://forms.gle/oUrx681rou2iwHgFA", "https://forms.gle/6qef8JwhC1wxtUrg8", "https://forms.gle/QaGapcKZwzCcbGUw5", "https://forms.gle/mrsav2NdeBPAiZgV9", "https://forms.gle/HDBMz8V1gz2kbc6Z7", "https://forms.gle/GhD67E4PHMxvQxQd6", "https://forms.gle/Tqz8XxQDQ8JdxBUP7", "https://forms.gle/Th9DwMgCraCxU4nA6", "https://forms.gle/NojPzRYLRED8mN3o9", "https://forms.gle/8zttayffT92MTmhB9"]
-        };
-
-        const waNomors = {
-            kelasX: ["6281214004178", "6285189711140", "6289676498612", "6282132709662", "6281217090740", "6282330447449", "6285707226588", "6281255709797", "6281230710250", "6281915809637"],
-            kelasXI: ["6282257928505", "6282245229793", "6282131492701", "6281235824548", "6282334888934", "6285707049967", "6282223404984", "6285755852766", "6281249987371", "6287758483391"],
-            kelasXII: ["6283895444185", "6281779920510", "62823339598797", "6282143646336", "6285784402248", "6281231550796", "6289669632101", "6285740657618", "628125201917", "6282334883272"]
-        };
-
-        function initializePortal() {
-            const templateMsg = encodeURIComponent("Assalamualaikum, saya [nama anda] mengalami kendala pada pengisian Jurnal Ramadhan dengan detail sebagai berikut: [Jelaskan kendala anda]");
-            const renderButtons = (containerId, prefix, data, isWA = false) => {
-                const container = document.getElementById(containerId);
-                data.forEach((val, index) => {
-                    const el = document.createElement('a');
-                    el.target = "_blank";
-                    if (isWA) {
-                        el.href = `https://wa.me/${val}?text=${templateMsg}`;
-                        el.className = "btn-wa font-semibold py-3 px-1 rounded-xl text-center flex items-center justify-center gap-2";
-                        el.innerHTML = `<i class="fab fa-whatsapp"></i> ${prefix} ${index + 1}`;
-                    } else {
-                        el.href = val;
-                        el.className = "btn-class bg-emerald-50 text-emerald-700 font-semibold py-3 px-2 rounded-xl text-center border border-emerald-100 hover:bg-emerald-600 hover:text-white";
-                        el.innerText = `${prefix}-${index + 1}`;
-                    }
-                    container.appendChild(el);
-                });
-            };
-            renderButtons('container-x', 'X', linksJurnal.kelasX);
-            renderButtons('container-xi', 'XI', linksJurnal.kelasXI);
-            renderButtons('container-xii', 'XII', linksJurnal.kelasXII);
-            renderButtons('cs-container-x', 'X', waNomors.kelasX, true);
-            renderButtons('cs-container-xi', 'XI', waNomors.kelasXI, true);
-            renderButtons('cs-container-xii', 'XII', waNomors.kelasXII, true);
-        }
-
-        function updateDates() {
-            const now = new Date();
-            
-            // Format Tanggal
-            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            document.getElementById('date-masehi').innerText = now.toLocaleDateString('id-ID', options);
-            
-            // Format Jam (HH:mm:ss)
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            document.getElementById('current-time').innerText = `${hours}:${minutes}:${seconds}`;
-        }
-
-        async function fetchSholat() {
-            try {
-                const response = await fetch('https://api.aladhan.com/v1/timingsByCity?city=Banyuwangi&country=Indonesia&method=2');
-                const data = await response.json();
-                const t = data.data.timings;
-                const list = [{n:'Imsak', t:t.Imsak}, {n:'Subuh', t:t.Fajr}, {n:'Dzuhur', t:t.Dhuhr}, {n:'Ashar', t:t.Asr}, {n:'Maghrib', t:t.Maghrib}, {n:'Isya', t:t.Isha}];
-                document.getElementById('sholat-container').innerHTML = list.map(s => `<div class="flex justify-between items-center bg-white/10 p-2 rounded-lg"><span class="font-medium">${s.n}</span><span class="font-bold">${s.t}</span></div>`).join('');
-            } catch (e) { document.getElementById('sholat-container').innerHTML = 'Gagal memuat.'; }
-        }
-
-document.addEventListener("DOMContentLoaded", () => {
-    initializePortal();
-    updateDates();
-    setInterval(updateDates, 1000);
-    fetchSholat();
-});
-
-    </script>
 </body>
 </html>
